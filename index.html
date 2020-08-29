@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/helper/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.14.0-web/css/all.css">
+</head>
+<body>
+    <div id="musicBox">
+        <div id="panel"></div>
+        <div class="bottom">
+            <div class="Box">
+                <audio id="Audio" ref='audio'>
+                    <source src="./static/【鬼滅之刃】LiSA - 紅蓮華 (中日文字幕)-KimetsunoYaiba OP Full Lyric.mp3" type="audio/mpeg" />
+                </audio>
+                <div class="controlBox">
+                    <div>1</div>
+                    <div>2</div>
+                    <div style="font-size: 48px;cursor: pointer">
+                        <i v-show='ispaused' class="fas fa-play-circle" @click='played'></i>
+                        <i v-show='ispaused == false' class="fas fa-pause-circle" @click='paused'></i>
+                    </div>
+                    <div>4</div>
+                    <div>5</div>
+                </div>
+                <div class="timeLineBox">
+                    <div class="timeLine">
+                        <div id="timeLine_process"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/helper/vue.js"></script>
+    <script src="./js/script.js"></script>
+    <!-- <script>
+        (function(window, undefined) {
+            var player = document.getElementById('Audio'),
+            map =  ['error','src','currentSrc','networkState','readyState','preload','buffered','played','seekable','seeking','currentTime','startTime','duration','paused','defaultPlaybackRate','playbackRate','ended','autoplay','loop','controls','volume','muted'];
+            window.setInterval(function(){
+                var str = '';
+                for(var i=0, j=map.length; i<j; i++) {
+                    str += map[i] + ' : ' + player[map[i]] + '<br>\n';
+                }
+                document.getElementById('panel').innerHTML = str;
+            }, 100);
+        })(window);
+        </script> -->
+</body>
+</html>
